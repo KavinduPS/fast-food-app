@@ -1,4 +1,5 @@
 import CartButton from "@/components/CartButton";
+import { offers } from "@/constants";
 import cn from "clsx";
 import {
   FlatList,
@@ -9,7 +10,6 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { offers } from "../constants";
 
 export default function Index() {
   return (

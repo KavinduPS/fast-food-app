@@ -76,7 +76,13 @@ export const getCurrentUser = async () => {
       [Query.equal("userId", currentAccount.$id)]
     );
     if (!currentUser) throw Error;
-    return currentUser.documents[0];
+    const user = currentUser.documents[0];
+    return {
+      userId: user.userId,
+      name: user.name,
+      email: user.email,
+      avatar: user.avatar,
+    };
   } catch (error) {
     throw new Error(error as string);
   }

@@ -1,4 +1,5 @@
 import Ionicons from "@expo/vector-icons/IonIcons";
+import { Models } from "react-native-appwrite";
 
 export type CreateUserParams = {
   name: string;
@@ -33,3 +34,25 @@ export type TabBarIconProps = {
   icon: keyof typeof Ionicons.glyphMap;
   title: string;
 };
+
+export type GetMenuParams = {
+  category: string;
+  query: string;
+};
+
+export interface Menu extends Models.Document {
+  $id: string;
+  name: string;
+  description: string;
+  image_url: string;
+  rating: number;
+  calories: number;
+  protein: number;
+  price: number;
+  categories: Cateogries[];
+}
+
+export interface Categories extends Models.Document {
+  name: string;
+  description: string;
+}

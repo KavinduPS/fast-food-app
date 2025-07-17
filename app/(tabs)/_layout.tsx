@@ -8,16 +8,6 @@ import { View } from "react-native";
 const TabBarIcon = ({ focused, icon, title }: TabBarIconProps) => (
   <View>
     <Ionicons name={icon} size={20} color={focused ? "#f97316" : "#737373"} />
-    {/* <View>
-      <Text
-        className={cn(
-          "text-xs mt-1 font-bold",
-          focused ? "text-primary-500" : "text-neutral-500"
-        )}
-      >
-        {title}
-      </Text>
-    </View> */}
   </View>
 );
 

@@ -4,9 +4,6 @@ import { useLocalSearchParams } from "expo-router/build/hooks";
 import React, { useState } from "react";
 import { TextInput, TouchableOpacity, View } from "react-native";
 
-interface SearchBarProps {
-  placeholder: string;
-}
 const SearchBar = () => {
   const params = useLocalSearchParams<{ query?: string }>();
   const [query, setQuery] = useState(params.query);

@@ -1,11 +1,21 @@
+import CartItem from "@/components/CartItem";
+import { useCartStore } from "@/store/cart.store";
 import React from "react";
-import { Text, View } from "react-native";
+import { FlatList } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Cart = () => {
+  const { items } = useCartStore();
   return (
-    <View>
-      <Text>Cart</Text>
-    </View>
+    <SafeAreaView className="flex-1">
+      <FlatList
+        data={items}
+        renderItem={({ item, index }) => {
+          return <CartItem item={item} />;
+        }}
+        contentContainerClassName="mx-5"
+      />
+    </SafeAreaView>
   );
 };
 

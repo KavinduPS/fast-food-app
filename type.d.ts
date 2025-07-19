@@ -29,6 +29,20 @@ export type AuthState = {
   fetchAuthenticatedUser: () => Promise<void>;
 };
 
+export type CartState = {
+  items: CartItemType[];
+  addToCart: (item: CartItemType) => void;
+  removeFromCart: (id: string) => void;
+};
+
+export interface CartItemType {
+  $id: string;
+  name: string;
+  price: number;
+  quantity: number;
+  imageUrl: string;
+}
+
 export type TabBarIconProps = {
   focused: boolean;
   icon: keyof typeof Ionicons.glyphMap;

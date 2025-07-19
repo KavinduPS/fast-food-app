@@ -19,6 +19,7 @@ const Search = () => {
   const [isLoading, setIsLoading] = useState<boolean>();
   const [menu, setMenu] = useState<Menu[]>();
   const [categories, setCategories] = useState<Categories[]>();
+  console.log(menu);
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
@@ -54,6 +55,7 @@ const Search = () => {
               style={{ width: "45%" }}
             >
               <MenuItem
+                $id={item.$id}
                 name={item.name}
                 imageUrl={item.image_url}
                 price={item.price}

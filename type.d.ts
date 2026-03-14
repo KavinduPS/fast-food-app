@@ -43,6 +43,14 @@ export interface CartItemType {
   imageUrl: string;
 }
 
+type OrderStatus = "confirmed" | "preparing" | "on_the_way" | "delivered";
+
+interface OrderStore {
+  status: OrderStatus;
+  estimatedMinutes: number;
+  setStatus: (status: OrderStatus) => void;
+}
+
 export type TabBarIconProps = {
   focused: boolean;
   icon: keyof typeof Ionicons.glyphMap;

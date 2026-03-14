@@ -19,7 +19,6 @@ const Search = () => {
   const [isLoading, setIsLoading] = useState<boolean>();
   const [menu, setMenu] = useState<Menu[]>();
   const [categories, setCategories] = useState<Categories[]>();
-  console.log(menu);
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);

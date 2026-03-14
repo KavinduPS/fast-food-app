@@ -12,7 +12,6 @@ const SignIn = () => {
 
   const submit = async () => {
     const { email, password } = form;
-    console.log(email, password);
     if (!email || !password) {
       return Alert.alert("Error", "Please enter valid email and password");
     }

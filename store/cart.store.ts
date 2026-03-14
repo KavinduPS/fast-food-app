@@ -30,10 +30,11 @@ export const useCartStore = create<CartState>((set) => ({
         };
       } else {
         return {
-          items: state.items.map((removingItem) => {
-            if (removingItem.$id === id) {
-              return { ...removingItem, quantity: removingItem?.quantity - 1 };
+          items: state.items.map((item) => {
+            if (item.$id === id) {
+              return { ...item, quantity: item?.quantity - 1 };
             }
+            return item;
           }),
         };
       }

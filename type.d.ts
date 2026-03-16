@@ -1,4 +1,4 @@
-import Ionicons from "@expo/vector-icons/IonIcons";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { Models } from "react-native-appwrite";
 
 export type CreateUserParams = {
@@ -25,6 +25,7 @@ export type AuthState = {
   isLoading: boolean;
   setIsAuthenticated: (value: boolean) => void;
   setUser: (user: User | null) => void;
+  signout: () => void;
   setLoading: (loading: boolean) => void;
   fetchAuthenticatedUser: () => Promise<void>;
 };

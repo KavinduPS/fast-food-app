@@ -128,7 +128,7 @@ const OrderTracking = () => {
             </View>
           )}
           ListFooterComponent={() => (
-            <View className="bg-white mx-5 rounded-b-2xl px-4 pb-4">
+            <View className="bg-white mx-5 rounded-b-2xl px-6 pb-4">
               <View className="w-full h-[1px] bg-gray-200"></View>
               <View className="flex flex-row justify-between items-center mt-2">
                 <Text className="font-semibold text-lg">Total</Text>

@@ -1,6 +1,6 @@
 import useAuthStore from "@/store/auth.store";
 import * as Sentry from "@sentry/react-native";
-import { Stack } from "expo-router";
+import { router, Stack } from "expo-router";
 import { useEffect } from "react";
 import "./globals.css";
 
@@ -24,11 +24,21 @@ Sentry.init({
 });
 
 export default Sentry.wrap(function RootLayout() {
-  const { isLoading, fetchAuthenticatedUser } = useAuthStore();
+  const { isLoading, fetchAuthenticatedUser, isAuthenticated } = useAuthStore();
 
   useEffect(() => {
     fetchAuthenticatedUser();
   }, []);
+
+  useEffect(() => {
+    if (isLoading) return;
+
+    if (isAuthenticated) {
+      router.replace("/");
+    } else {
+      router.replace("/SignIn");
+    }
+  }, [isLoading, isAuthenticated]);
 
   if (isLoading) return null;
   return <Stack screenOptions={{ headerShown: false }} />;

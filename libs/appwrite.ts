@@ -103,6 +103,14 @@ export const getCurrentUser = async () => {
   }
 };
 
+export const signOut = async () => {
+  try {
+    await account.deleteSession("current");
+  } catch (error) {
+    throw new Error(error as string);
+  }
+};
+
 export const getMenu = async ({ category, query }: GetMenuParams) => {
   try {
     const queries: string[] = [];
